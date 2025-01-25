@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=btrSucc
+comment0.text=\r\n\ Aggiungi\ qui\ una\ descrizione\ della\ classe\ EsDieci\r\n\ \r\n\ @author\ (il\ tuo\ nome)\ \r\n\ @version\ (un\ numero\ di\ versione\ o\ una\ data)\r\n
+comment1.params=btr\ n
+comment1.target=StringSList\ btrListSucc(java.lang.String,\ int)
+comment2.params=str
+comment2.target=java.lang.String\ btrSucc(java.lang.String)
+numComments=3

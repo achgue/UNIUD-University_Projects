@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Queens
+comment1.params=n
+comment1.target=void\ prova(int)
+comment2.params=b
+comment2.target=int\ numberOfCompletions(Board)
+comment3.params=n
+comment3.target=SList\ listOfAllSolutions(int)
+comment4.params=b
+comment4.target=SList\ listOfAllCompletions(Board)
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+numComments=6

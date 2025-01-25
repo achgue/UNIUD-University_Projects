@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Node
+comment0.text=\ \r\n\ Codifica\ di\ Huffman\ (8/05/2014)\r\n\r\n\ Classe\ Node\r\n\ nodi\ dell'albero\ di\ Huffman\r\n\r\n\ implements\ Comparable<Node>\:\r\n\ le\ istanze\ di\ Node\ possono\ essere\ ordinate\ in\ una\ coda\ con\ priorita'\r\n
+comment1.params=ch\ weight
+comment1.target=Node(char,\ int)
+comment2.params=left\ right
+comment2.target=Node(Node,\ Node)
+comment3.params=
+comment3.target=boolean\ isLeaf()
+comment4.params=
+comment4.target=char\ character()
+comment5.params=
+comment5.target=int\ weight()
+comment6.params=
+comment6.target=Node\ left()
+comment7.params=
+comment7.target=Node\ right()
+comment8.params=n
+comment8.target=int\ compareTo(Node)
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

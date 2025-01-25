@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Board
+comment1.params=n
+comment1.target=Board(int)
+comment2.params=n
+comment2.target=int[]\ initialize(int)
+comment3.params=
+comment3.target=void\ permutation()
+comment4.params=
+comment4.target=boolean\ isOrdered()
+comment5.params=a
+comment5.target=boolean\ isSorted(int[])
+comment6.params=n
+comment6.target=boolean\ canMove(int)
+comment7.params=
+comment7.target=java.lang.String\ config()
+comment7.text=public\ boolean\ canMove(int\ i){\r\n\ \ \ \ /*if((i+1)%rowSize\ \=\=\ 0\ ||\ (i-1)%rowSize\ \=\=\ 0){\r\n\ \ \ \ if(free-1\ \=\=\ i\ ||\ free+1\ \=\=\ 1){\r\n\ \ \ \ return\ false;\ //mi\ trovo\ sull'estremit\u00E0\ del\ mio\ array\r\n\ \ \ \ }else{\r\n\ \ \ \ return\ true;\ //\r\n\ \ \ \ }\r\n\ \ \ \ }else\r\n\ \ \ \ if(free+rowSize\ \=\=\ i\ ||\ free-rowSize\ \=\=\ i){\r\n\ \ \ \ return\ true;\r\n\ \ \ \ }else\ if((free+1\ \=\=\ i\ ||\ free-1\ \=\=\ i)\ &&\ (free-i\ \!\=\ 1\ ||\ (-free)+i\ \!\=\ 1)){\r\n\ \ \ \ return\ true;\r\n\ \ \ \ }else{\r\n\ \ \ \ return\ false;\r\n\ \ \ \ }\r\n}
+comment8.params=n
+comment8.target=void\ move(int)
+comment9.params=n
+comment9.target=int\ findNumber(int)
+numComments=10

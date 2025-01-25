@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=NodeStack
+comment1.params=
+comment1.target=NodeStack()
+comment2.params=
+comment2.target=boolean\ empty()
+comment3.params=
+comment3.target=Node\ peek()
+comment4.params=
+comment4.target=Node\ pop()
+comment5.params=n
+comment5.target=void\ push(Node)
+numComments=6

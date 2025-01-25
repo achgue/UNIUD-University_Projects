@@ -1,0 +1,62 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname eserciziotass) (read-case-sensitive #t) (teachpacks ((lib "drawings.ss" "installed-teachpacks"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "drawings.ss" "installed-teachpacks")) #f)))
+; numero figure = lun^2
+
+(set-tessellation-shift-step!)
+
+;L-tile : nome figura
+;(glue-tiles L-tile (shift-right (shift-down L-tile 1) 1))
+(define siq
+  (lambda (lun)
+    (if (= lun 2)
+        (glue-tiles L-tile
+                    (shift-down (shift-right L-tile (- lun 1)) (- lun 1)))
+        (glue-tiles (shift-down (shift-right (suq (/ lun 2)) ()) (/ lun 2))
+                    (glue-tiles (siq (- lun 2))
+                                (glue-tiles (shift-down (shift-right L-tile (- lun 1)) (- lun 1))
+                                            (shift-down (shift-right L-tile (- lun 2)) (- lun 2)))))
+        ) 
+    ))
+;(siq 4)
+
+
+     
+(define seq     ;val: figura
+  (lambda (lun)            ;lun: lunghezza della figura, intero positivo
+    (if (= lun 1)
+        L-tile
+        (glue-tiles (seq (- lun 1))
+                    (shift-down (shift-right L-tile (- lun 1)) (- lun 1)))
+        )
+    ))
+;(L-tassellation 1)
+
+(define suq
+  (lambda (lun) 
+      (cond((= lun 1) L-tile)
+           ((even? lun) (glue-tiles (shift-right(quarter-turn-right L-tile) (* (- lun 1) 2))
+                                    (glue-tiles (shift-down(quarter-turn-left L-tile) (* (- lun 1) 2))
+                                    (suq (- lun 1)))))
+            (else
+             (glue-tiles (shift-right L-tile (* (- lun 1) 2))
+                         (glue-tiles (shift-down L-tile (* (- lun 1) 2))
+                         (suq (- lun 1))))
+             )
+    )))
+
+
+;(suq 1)
+(define L-tassellatio
+  (lambda (lun)   
+   (glue-tiles (siq lun) (suq lun))
+    ))
+  ;(L-tassellation 2)        
+         
+(define L-tassellation
+  (lambda (lun)
+    (if (= lun 1)
+        T-tiles
+        (
+        
+        

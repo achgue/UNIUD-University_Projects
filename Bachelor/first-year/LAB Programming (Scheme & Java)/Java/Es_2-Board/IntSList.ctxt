@@ -1,0 +1,30 @@
+#BlueJ class context
+comment0.target=IntSList
+comment0.text=\r\n\ Classe\ IntSList\:\ Integer\ Scheme-like\ Lists\r\n\r\n\ Definizione\ di\ una\ classe\ in\ Java\ per\ realizzare\ oggetti\r\n\ assimilabili\ alle\ liste\ in\ Scheme,\ limitatamente\ al\ caso\r\n\ di\ liste\ di\ interi.\r\n\r\n\ Le\ liste\ create\ sono\ "immutabili".\r\n\r\n\ Ultimo\ aggiornamento\:\ 18/03/2021\r\n\r\n\ -----\ Protocollo\ -----\r\n\r\n\ \ \ IntSList\ s,\ t,\ u;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Tipi\ di\ riferimento\r\n\ \ \ int\ n;\r\n\r\n\ Costruttori\:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Scheme\:\r\n\r\n\ \ \ \ \ s\ \=\ new\ IntSList();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ null\r\n\ \ \ \ \ t\ \=\ new\ IntSList(n,s);\ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ cons\r\n\r\n\ Metodi\:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Scheme\:\r\n\r\n\ \ \ \ \ boolean\ b\ \=\ t.isNull();\ \ \ \ \ \ \ \ \ \ \ \ \ //\ null?\r\n\ \ \ \ \ n\ \=\ t.car();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ car\r\n\ \ \ \ \ u\ \=\ t.cdr();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ cdr\r\n\ \ \ \ \ u\ \=\ t.cons(n);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ cons\ (diversa\ versione)\r\n
+comment1.params=
+comment1.target=IntSList()
+comment10.params=il
+comment10.target=IntSList\ append(IntSList)
+comment11.params=
+comment11.target=IntSList\ reverse()
+comment12.params=re
+comment12.target=IntSList\ reverseRec(IntSList)
+comment13.params=
+comment13.target=java.lang.String\ toString()
+comment2.params=e\ il
+comment2.target=IntSList(int,\ IntSList)
+comment3.params=
+comment3.target=boolean\ isNull()
+comment4.params=
+comment4.target=int\ car()
+comment5.params=
+comment5.target=IntSList\ cdr()
+comment6.params=e
+comment6.target=IntSList\ cons(int)
+comment7.params=
+comment7.target=int\ length()
+comment8.params=k
+comment8.target=int\ listRef(int)
+comment9.params=il
+comment9.target=boolean\ equals(IntSList)
+numComments=14

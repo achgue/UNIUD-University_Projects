@@ -1,0 +1,115 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname |Es3 conversione Bx - B10|) (read-case-sensitive #t) (teachpacks ((lib "drawings.ss" "installed-teachpacks"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "drawings.ss" "installed-teachpacks")) #f)))
+; esegue la conversione di un numero in B2 in B10
+(define risultato ; val: intero
+  (lambda(b num)    ; b:stringa di caratteri della base  num: numero da convertire in B10
+    (if(deci? num)
+        (* (segno num) (conv b (no-segno num)))
+        (* (segno num) (intero b (no-segno num)))
+       )
+   )) 
+
+;verifico se ho la virgola
+(define deci?   ;vero se ha la virgola
+  (lambda (num)
+    (let((k (-(string-length num ) 1)))
+     (if(string=? (substring num k ) ".")
+        true
+        (if(= k 0)
+           false
+           (deci? (substring num 0  k )))
+           ))
+    ))
+
+;a fine operazione mette il segno al risultato
+(define segno   ;val: intero 
+  (lambda (num) ;stringa
+    (if(string=? (substring num 0 1 ) "-")
+       -1
+       1
+       )))
+
+;rimuove dalla stringa il segno, se presente (prima della conversione) 
+(define no-segno ;val: stringa
+  (lambda(num)   ;stringa
+    ;(let ((k (string-length bin)))
+    (if(or(string=? (substring num 0 1 ) "-")
+          (string=? (substring num 0 1 ) "+"))
+       (substring num 1 )
+       (substring num 0 ))
+       ))     
+
+;converte il numero con la virgola
+(define conv        ;val: intero 
+  (lambda (b num)   ;stringhe
+    (+
+     (intero b (int-rep num)) 
+     (decimale b (dec-rep num)) ;(string-append (substring bin 0 (string-length bin)) ".0")
+     )
+    ))
+
+;converte la parte intera in B10
+(define intero  ;val: intero
+  (lambda(b num)  ;stringhe
+    (let((k (- (string-length num) 1))
+         (c (string-length b))) 
+      (if(= k 0)
+         (base-int b num)
+         (+
+          (* c (intero b (substring num 0 k)))
+          (base-int b (substring num k))
+          )
+         ))
+    ))
+
+; converte la parte decimale in B10
+(define decimale   ;val: decimale
+  (lambda(b num)   ;stringhe
+    (let((k (string-length num))
+         (c (string-length b)))
+      (if(= k 1)
+         (base-dec b num)
+         (+
+          (* (/ 1 c) (decimale b (substring num 1 k)))
+           (base-dec b (substring num 0 1))
+          )
+         ))
+    ))
+
+(define dec-rep  ;prende la parte decimale val: decimale
+  (lambda (num)  ;stringa
+    (let ((k (string-length num)))
+      (if(string=? (substring num 0 1) ".")
+         (substring num 1 k)
+         (dec-rep (substring num 1 k))
+         )) 
+    ))
+
+ (define int-rep  ;prende la parte intera
+  (lambda (num)   ;stringa
+    (let ((k (- (string-length num) 1)))
+      (if(string=? (substring num k) ".")
+         (substring num 0 k)
+         (int-rep (substring num 0  k ))  
+         )
+    )))
+
+;converte un carattere
+(define base-int  ;val: intero 
+  (lambda (b val)
+    (if  (string=? val (substring b 0 1))
+         0
+         (+ (base-int (substring b 1) val) 1)
+         )
+    ))
+
+;converte un carattere dopo la virgola
+(define base-dec
+  (lambda (b val)
+    (if (string=? val (substring b 0 1))
+        0
+        (/ (+ (intero (substring b 1) val) 1) (string-length b))
+        )
+    ))
+ 
